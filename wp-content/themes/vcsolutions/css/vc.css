@@ -15,9 +15,7 @@ html, body {
 .vc-header li {
     list-style-type: none;
 }
-.vc-page {
-    margin-top: 100px;
-}
+
 #vc-bg {
     position: fixed;
     background-image: url('../images/VACHINA1678.jpg');
@@ -64,20 +62,12 @@ html, body {
     right: -15px;
     overflow-y: auto;
 }
-
-.vc-1, .vc-2 p {
-    padding: 15px;
-}
-.vc-2 div {
-    margin-bottom: 20%;
-}
-.vc-1 div {
-    margin-bottom: 100%;
-}
 .vc-2 img {
     max-width: 100%;
+    margin-bottom: 80%;
 }
 .vc-1 img {
+    margin-bottom: 150%;
     margin-left: -100%;
     max-width: 1000px;
 }

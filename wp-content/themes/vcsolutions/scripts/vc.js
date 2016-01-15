@@ -32,7 +32,6 @@ var vcApp = function() {
                 opacity -= 0.1;
             } else {
                 clearInterval(interval);
-                bg.style.backgroundImage = 'url(' + vcApp.backgroundImages[Math.floor(Math.random() * vcApp.backgroundImages.length)] + ')';
             }
         }, 10)
     }
@@ -45,7 +44,7 @@ var vcApp = function() {
             scrollContainer.scrollTop += 1;
         } while (scrollContainer.scrollTop == 0);
 
-        var targetY = -((window.innerHeight / 2) - (target.height / 2));
+        var targetY = -100// -((window.innerHeight / 2) - (target.height / 2));
         console.log(window.innerHeight, target.height, targetY);
         do { //find the top of target relatively to the container
             if (target == scrollContainer) break;
