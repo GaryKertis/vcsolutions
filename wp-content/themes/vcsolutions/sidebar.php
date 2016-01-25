@@ -1,8 +1,8 @@
-<div class="vc-1 col-sm-2 col-xs-2">
-    <div class="main">
+<div class="vc-1 col-sm-4 hidden-xs">
+    <div id="vc-left" class="main">
         <?php
 			$query_images_args = array(
-			    'post_type' => 'attachment', 'post_mime_type' =>'image', 'post_status' => 'inherit', 'posts_per_page' => -1,
+			    'order' => 'ASC', 'orderby' => 'title', 'post_type' => 'attachment', 'post_mime_type' =>'image', 'post_status' => 'inherit', 'posts_per_page' => -1,
 			    'tax_query' => array(array('taxonomy' => 'media_category', 'field' => 'slug', 'terms' => 'column1'))
 			);
 			$query_images = new WP_Query( $query_images_args );

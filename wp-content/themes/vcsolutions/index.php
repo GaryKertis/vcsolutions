@@ -1,14 +1,12 @@
 <?php get_header(); ?>
 
         <div class="main row">
-            <div class="col-sm-1 hidden-xs">
-            </div>
             <?php get_sidebar(); ?>
-            <div class="vc-2 col-sm-4 col-xs-6">
-                <div class="main">
+            <div class="vc-2 col-sm-8 col-xs-12">
+                <div id="vc-right" class="main">
 					<?php
 					$query_images_args = array(
-					    'post_type' => 'attachment', 'post_mime_type' =>'image', 'post_status' => 'inherit', 'posts_per_page' => -1,
+					    'order' => 'ASC', 'orderby' => 'title', 'post_type' => 'attachment', 'post_mime_type' =>'image', 'post_status' => 'inherit', 'posts_per_page' => -1,
 					    'tax_query' => array(array('taxonomy' => 'media_category', 'field' => 'slug', 'terms' => 'column2'))
 					);
 					$query_images = new WP_Query( $query_images_args );
@@ -21,8 +19,6 @@
 					}
 					?>
                 </div>
-            </div>
-            <div class="col-sm-1 hidden-xs">
             </div>
         </div>
     </div>
