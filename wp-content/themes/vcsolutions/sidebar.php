@@ -11,7 +11,7 @@
 				echo "<div>";
 				if ($image->post_content) echo "<p>" . $image->post_content . "</p>";
 				if ($image->post_excerpt) echo "<p>" . $image->post_excerpt . "</p>";
-			    echo "<img onclick='vcApp.imgClick(this)' src='".wp_get_attachment_url( $image->ID )."' alt='". get_post_meta($image->ID, '_wp_attachment_image_alt', true)."' /></div>";
+			    echo "<img src='".wp_get_attachment_url( $image->ID )."' alt='". get_post_meta($image->ID, '_wp_attachment_image_alt', true)."' /></div>";
 			}
 		?>
     </div>

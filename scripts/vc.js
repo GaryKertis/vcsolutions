@@ -1,14 +1,25 @@
 var vcApp = function() {
+    
     var bg;
-    var interval;
-    var opacity = 0;
-    var goDown = false;
-    window.onload = function() {
+
+    if (window.attachEvent) {
+        window.attachEvent('onload', startVc);
+    } else if (window.addEventListener) {
+        window.addEventListener('load', startVc, false);
+    } else {
+        document.addEventListener('load', startVc, false);
+    }
+
+    function startVc() {
         bg = document.getElementById("vc-bg");
         hideBg();
         preLoad();
-        window.addEventListener('mousemove', setCursor)
+        //window.addEventListener('mousemove', setCursor)
     }
+
+    var interval;
+    var opacity = 0;
+    var goDown = false;
 
     return {
         showBg: showBg,
@@ -27,6 +38,7 @@ var vcApp = function() {
     }
 
     function showBg() {
+        console.log(bg);
         if (bg) {
             clearInterval(interval);
             interval = setInterval(function() {
@@ -49,6 +61,7 @@ var vcApp = function() {
                     opacity -= 0.1;
                 } else {
                     clearInterval(interval);
+                    bg.style.opacity = 0;
                     bg.style.backgroundImage = 'url(' + vcApp.backgroundImages[Math.floor(Math.random() * vcApp.backgroundImages.length)] + ')';
                 }
             }, 10)
@@ -66,7 +79,7 @@ var vcApp = function() {
             return
         }
 
-        var isAtTop = target.getBoundingClientRect().top <= (target.parentNode.parentNode.id === 'vc-right' ? 100 : 200);
+        var isAtTop = target.getBoundingClientRect().top <= (target.parentNode.parentNode.id === 'vc-right' ? 100 : 0);
         var nextNode = target.parentNode.nextSibling.firstChild;
         var prevNode = target.parentNode.previousSibling.firstChild;
         if (!goDown && !isAtTop) {
@@ -85,7 +98,7 @@ var vcApp = function() {
             if (!scrollContainer) return;
             scrollContainer.scrollTop += 1;
         } while (scrollContainer.scrollTop == 0);
-        var targetY = scrollContainer.id === "vc-right" ? -100 : -200;
+        var targetY = scrollContainer.id === "vc-right" ? -100 : 0;
         do { //find the top of target relatively to the container
             if (target == scrollContainer) break;
             targetY += target.offsetTop;

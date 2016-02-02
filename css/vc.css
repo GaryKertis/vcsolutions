@@ -1,7 +1,5 @@
 html, body {
     height: 100%;
-    cursor: url('../images/up.png'), auto;
-;
 }
 .vc-header {
     background-color: none;
@@ -25,7 +23,6 @@ html, body {
 .vc-1, .vc-2 p {
     padding: 15px;
 }
-
 .vc-1 div {
     margin-bottom: 100%;
 }
@@ -35,10 +32,20 @@ html, body {
 .vc-1 img {
     max-width: 1000px;
 }
+.vc-1 .main img:first-child {
+    margin-top: 40%;
+}
+.vc-2 .main img:first-child {
+    margin-top: 50%;
+}
 @media screen and (min-width: 768px) {
-    .container, .main {
+    .container {
         height: 100%;
         overflow: hidden;
+        margin-top: -2px;
+    }
+    .main {
+        height: 100%;
         margin-top: -2px;
     }
     #vc-contact {
@@ -50,22 +57,16 @@ html, body {
     .vc-1, .vc-2 {
         height: 100%;
         min-height: 100%;
-        overflow: hidden;
         position: relative;
-    }
-    .vc-1 .main img:first-child {
-        margin-top: 40%;
-    }
-    .vc-2 .main img:first-child {
-        margin-top: 50%;
     }
     .vc-1 .main, .vc-2 .main {
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
-        right: -15px;
-        overflow-y: auto;
+        right: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 }
 @media screen and (max-width: 767px) {
@@ -79,4 +80,17 @@ html, body {
     #vc-contact {
         display: block;
     }
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #0a286f;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: none;
 }

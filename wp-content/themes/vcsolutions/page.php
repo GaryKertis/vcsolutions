@@ -21,11 +21,6 @@ window.onload = function() {
     document.getElementById("vc-about-img").src = vcApp.aboutImages[Math.floor(Math.random() * vcApp.aboutImages.length)];
 }
 </script>
-<style>
-body,html {
-    cursor: default;
-}
-</style>
         <div class="row" style="min-height: 1000px">
             <div class="col-sm-4 hidden-xs"></div>
             <div class="col-sm-8 col-xs-12">
