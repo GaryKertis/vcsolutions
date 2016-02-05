@@ -33,6 +33,7 @@
 
 <body>
     <div id="vc-bg"></div>
+    <div id="scrollcolor"></div>
     <div class="container">
         <div id="vc-contact">
             <a href="?page_id=2"><span class="glyphicon glyphicon-th-list"></span></a>

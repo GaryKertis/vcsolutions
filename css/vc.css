@@ -85,12 +85,11 @@ html, body {
     width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    width: 10px;
-    height: 10px;
     border-radius: 10px;
-    background: #0a286f;
+    background: #FFFFFF;
+    box-shadow: none;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
-    border: none;
+    border: 1px solid white;
 }

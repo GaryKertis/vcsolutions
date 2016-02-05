@@ -1,6 +1,7 @@
 var vcApp = function() {
-    
+
     var bg;
+    var userScrolled = false;
 
     if (window.attachEvent) {
         window.attachEvent('onload', startVc);
@@ -12,6 +13,8 @@ var vcApp = function() {
 
     function startVc() {
         bg = document.getElementById("vc-bg");
+        document.getElementById("vc-right").addEventListener('scroll', showScrollBar);
+        document.getElementById("vc-left").addEventListener('scroll', showScrollBar);
         hideBg();
         preLoad();
         //window.addEventListener('mousemove', setCursor)
@@ -34,6 +37,14 @@ var vcApp = function() {
         } else {
             document.body.style.cursor = "url('images/up.png'), auto";
             goDown = false;
+        }
+    }
+
+    function showScrollBar() {
+        if (!userScrolled) {
+            console.log('first scroll');
+            document.getElementById('scrollcolor').innerHTML = "<style>::-webkit-scrollbar-thumb {background: #FFDAB9!important;}</style>";
+            userScrolled = true;
         }
     }
 
