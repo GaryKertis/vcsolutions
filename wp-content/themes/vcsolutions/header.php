@@ -4,6 +4,7 @@
 <head>
     <title>VACHINA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name='keywords' content='vachina, solutions, pottery, new york'><meta name='description' content='Vachina is a collection of handmade pottery created in New York.'>
     <link href="./css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="./css/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
     <link href="./css/vc.css" rel="stylesheet">
