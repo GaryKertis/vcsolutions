@@ -13,8 +13,8 @@ var vcApp = function() {
 
     function startVc() {
         bg = document.getElementById("vc-bg");
-        document.getElementById("vc-right").addEventListener('scroll', showScrollBar);
-        document.getElementById("vc-left").addEventListener('scroll', showScrollBar);
+        document.getElementById("vc-right") && document.getElementById("vc-right").addEventListener('scroll', showScrollBar);
+        document.getElementById("vc-left") && document.getElementById("vc-left").addEventListener('scroll', showScrollBar);
         hideBg();
         preLoad();
         //window.addEventListener('mousemove', setCursor)
@@ -42,14 +42,12 @@ var vcApp = function() {
 
     function showScrollBar() {
         if (!userScrolled) {
-            console.log('first scroll');
             document.getElementById('scrollcolor').innerHTML = "<style>::-webkit-scrollbar-thumb {background: #FFDAB9!important;}</style>";
             userScrolled = true;
         }
     }
 
     function showBg() {
-        console.log(bg);
         if (bg) {
             clearInterval(interval);
             interval = setInterval(function() {
